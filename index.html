@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7.5: Misinformation in the AI Age - Teacher's Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            height: 1600px;
+            overflow-y: auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        .lesson-info {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .nav-buttons a {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-align: center;
+        }
+        .nav-buttons a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .content {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .section h4 {
+            color: #555;
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h4 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .tip-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-box h4 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .script-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        .script-label {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .answer-key {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .answer-key h4 {
+            color: #c2185b;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .example-box {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+        }
+        .example-box p {
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .timing-table td:first-child {
+            width: 100px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        blockquote {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        .tier-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tier-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Lesson 7.5: Misinformation in the AI Age</h1>
+            <div class="subtitle">Teacher's Guide</div>
+            <span class="lesson-info">Discussion Day | Chapter 7: AI in Media | ~50 minutes</span>
+            <nav class="nav-buttons">
+                <a href="#overview">Overview</a>
+                <a href="#preparation">Preparation</a>
+                <a href="#facilitation">Facilitation</a>
+                <a href="#answer-key">Answer Key</a>
+                <a href="#challenges">Challenges</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <!-- OVERVIEW SECTION -->
+            <section id="overview" class="section">
+                <h2>Lesson Overview</h2>
+
+                <h3>Purpose</h3>
+                <p>Students examine the ecosystem that produces and spreads misinformation, understanding the financial incentives, amplification mechanisms, and strategic use of AI-generated content. The lesson shifts from detection skills (7.2-7.4) to systemic understanding: <em>why</em> does misinformation exist, and why is the problem getting worse? The key insight is that AI's capabilities (fluent text, realistic media) align perfectly with what misinformation requires, while AI's limitations (no truth verification) mean it can't self-correct.</p>
+
+                <h3>Key Concepts</h3>
+                <ul>
+                    <li><strong>Financial incentives:</strong> Sensational content → clicks → ad revenue (no accountability for accuracy)</li>
+                    <li><strong>The channel explosion:</strong> 4 networks → thousands → millions of sources; echo chambers enabled</li>
+                    <li><strong>The amplification machine:</strong> Algorithms optimize for engagement, not truth</li>
+                    <li><strong>Actor typology:</strong> Profit-motivated, state-sponsored, ideologically-driven, chaos agents</li>
+                    <li><strong>Cost asymmetry:</strong> Cheap to create, expensive to debunk, corrections never reach full audience</li>
+                    <li><strong>AI as perfect misinformation tool:</strong> Strengths serve misinformation; weaknesses can't prevent it</li>
+                    <li><strong>The democratization question:</strong> What becomes valuable when anyone can produce professional content?</li>
+                </ul>
+
+                <h3>Connection to Chapter 7 Arc</h3>
+                <ul>
+                    <li><strong>7.1:</strong> Framework—AI excels at patterns, struggles with meaning</li>
+                    <li><strong>7.2:</strong> Applied to lyrics—hollow vocabulary detection</li>
+                    <li><strong>7.3:</strong> Applied to prose—AI artifacts, invisibility principle</li>
+                    <li><strong>7.4:</strong> Creation side—AI as mirror, authentic voice</li>
+                    <li><strong>7.5 (today):</strong> Misinformation ecosystem—why the problem exists and how AI makes it worse</li>
+                    <li><strong>7.6:</strong> Verification tools—practical strategies for navigating misinformation</li>
+                    <li><strong>7.7:</strong> Democracy and information quality</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>The Core Teaching</h4>
+                    <p>Individual detection skills are valuable but insufficient. The misinformation problem is structural—cheap to create, expensive to debunk, algorithmically amplified. AI makes every part of this worse. Students need to understand the <em>system</em> that produces misinformation, not just how to spot individual false claims.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Sensitive Territory</h4>
+                    <p>This lesson touches on politically sensitive topics—partisan media, echo chambers, platform responsibility. The tiered discussion system gives you flexibility to navigate this terrain appropriately for your community. The lesson uses hypotheticals and systemic analysis rather than specific current examples, but students may raise specific examples themselves. See "Potential Challenges" for guidance.</p>
+                </div>
+            </section>
+
+            <!-- PREPARATION SECTION -->
+            <section id="preparation" class="section">
+                <h2>Preparation</h2>
+
+                <h3>Before Class</h3>
+                <ul>
+                    <li>Review all three discussion tiers and decide which is appropriate for your class</li>
+                    <li>Consider your community context—what topics might be especially sensitive?</li>
+                    <li>Familiarize yourself with the channel explosion history (four-channel era → cable → platforms)</li>
+                    <li>Review the cost asymmetry table so you can explain it clearly</li>
+                    <li>Consider whether to assign the "Side Note" on democratization or treat it as optional reading</li>
+                </ul>
+
+                <h3>Materials Needed</h3>
+                <ul>
+                    <li>Projector for displaying discussion prompts (optional but helpful)</li>
+                    <li>Student field journals for group synthesis notes</li>
+                    <li>Timer for managing discussion segments</li>
+                </ul>
+
+                <h3>Room Setup</h3>
+                <p>Flexible seating that allows for both small group discussion and whole-class synthesis. Students should be able to see and hear each other during whole-class portions.</p>
+
+                <div class="tier-box">
+                    <h4>Choosing a Discussion Tier</h4>
+                    <p><strong>Tier 1 (Foundational):</strong> Uses a hypothetical health misinformation scenario. Safest option—avoids political territory entirely. Good for classes where political discussion is inappropriate or where students need more scaffolding.</p>
+                    <p><strong>Tier 2 (Comparative):</strong> Compares three hypothetical actor types (profit, state, ideological). Slightly more complex but still uses hypotheticals. Good for most classes.</p>
+                    <p><strong>Tier 3 (Systemic):</strong> Addresses the channel explosion, platform incentives, and policy questions directly. Most sophisticated but also most likely to surface political disagreements. Good for mature classes comfortable with nuanced discussion.</p>
+                </div>
+            </section>
+
+            <!-- FACILITATION SECTION -->
+            <section id="facilitation" class="section">
+                <h2>Facilitation Guide</h2>
+
+                <h3>Timing Overview</h3>
+                <table class="timing-table">
+                    <tr>
+                        <th>Time</th>
+                        <th>Section</th>
+                        <th>Activity</th>
+                    </tr>
+                    <tr>
+                        <td>5 min</td>
+                        <td>A</td>
+                        <td>Opening: Why does fake content exist? Brainstorm motivations</td>
+                    </tr>
+                    <tr>
+                        <td>8 min</td>
+                        <td>B</td>
+                        <td>The money trail and channel explosion—historical context</td>
+                    </tr>
+                    <tr>
+                        <td>6 min</td>
+                        <td>C</td>
+                        <td>The amplification machine—algorithms and speed</td>
+                    </tr>
+                    <tr>
+                        <td>12 min</td>
+                        <td>D-G</td>
+                        <td>Tiered discussion (small groups)</td>
+                    </tr>
+                    <tr>
+                        <td>6 min</td>
+                        <td>H</td>
+                        <td>Cost asymmetry problem and AI connection</td>
+                    </tr>
+                    <tr>
+                        <td>5 min</td>
+                        <td>I</td>
+                        <td>Side note: The democratization question (optional)</td>
+                    </tr>
+                    <tr>
+                        <td>6 min</td>
+                        <td>J</td>
+                        <td>Group synthesis</td>
+                    </tr>
+                    <tr>
+                        <td>2 min</td>
+                        <td>—</td>
+                        <td>Review questions and looking ahead</td>
+                    </tr>
+                </table>
+
+                <h3>Opening: Why Does Fake Content Exist? (5 minutes)</h3>
+                
+                <div class="script-box">
+                    <div class="script-label">Opening Frame</div>
+                    <p>"We've spent several lessons learning to detect AI-generated content—hollow lyrics, flat prose, AI artifacts. But today we're asking a different question: Why does misinformation exist in the first place? Someone sat down and deliberately created false or misleading content. Why would anyone do that?"</p>
+                </div>
+
+                <p>Brainstorm as a class. Let students generate categories, then organize them:</p>
+                <ul>
+                    <li><strong>Money:</strong> Ad revenue from clicks</li>
+                    <li><strong>Political influence:</strong> Domestic actors shaping elections/policy</li>
+                    <li><strong>Foreign influence:</strong> State actors destabilizing/manipulating</li>
+                    <li><strong>Ideological commitment:</strong> True believers sharing what they think is true</li>
+                    <li><strong>Chaos and disruption:</strong> Some actors benefit from confusion itself</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Key Point to Land</h4>
+                    <p>"Misinformation isn't one thing with one cause. Different actors have different goals. Understanding <em>why</em> content exists helps you evaluate it more critically than just asking 'is this true?'"</p>
+                </div>
+
+                <h3>The Money Trail and Channel Explosion (8 minutes)</h3>
+                
+                <p>Walk through the business model:</p>
+                <blockquote>Sensational content → Clicks → Ad impressions → Revenue</blockquote>
+
+                <p>Emphasize: "A website doesn't need to be accurate to make money. It needs to be clicked."</p>
+
+                <p>Then provide historical context:</p>
+                <ul>
+                    <li><strong>Four-channel era:</strong> ABC, NBC, CBS, PBS. Mass appeal required. Guardrail against extremes.</li>
+                    <li><strong>Cable explosion:</strong> Hundreds of channels. Niche strategy viable. Echo chambers emerge.</li>
+                    <li><strong>Platform explosion:</strong> YouTube, social media, podcasts. Millions of sources. AI enters picture.</li>
+                </ul>
+
+                <div class="script-box">
+                    <div class="script-label">Channel Explosion Summary</div>
+                    <p>"We went from four channels—where you needed mass appeal to survive—to millions of sources where you can build an audience by speaking to a specific group's existing beliefs. That's not all bad; it gave voice to people who were previously excluded. But it also enabled echo chambers where people consume only content that confirms what they already believe."</p>
+                </div>
+
+                <h3>The Amplification Machine (6 minutes)</h3>
+                
+                <p>Explain how algorithms amplify misinformation:</p>
+                <ul>
+                    <li>Content ranked by predicted engagement</li>
+                    <li>Emotional content generates more engagement</li>
+                    <li>Outrage spreads faster than almost anything</li>
+                    <li>Algorithms aren't designed to spread misinformation—they're designed to maximize engagement. But misinformation is often <em>more engaging</em>.</li>
+                </ul>
+
+                <p>Connect to Chapter 4: "Remember that algorithms learn from patterns. If users engage more with outrage, the algorithm learns to promote outrage. It's not a conspiracy—it's correlation processing doing what it's designed to do."</p>
+
+                <p>Address the speed problem: "False content circles the globe before fact-checkers finish their morning coffee. By the time a correction is issued, the original has been shared thousands of times."</p>
+
+                <h3>Tiered Discussion (12 minutes)</h3>
+                
+                <p>Assign students to small groups (3-4 students). Display or direct them to the appropriate tier.</p>
+
+                <div class="tier-box">
+                    <h4>Tier 1: Foundational Analysis</h4>
+                    <p>Hypothetical: A website publishes false health information for ad revenue. It spreads on social media.</p>
+                    <p>Questions: Who benefits? Who's harmed? What role do algorithms play? How would AI scale this? What could be done?</p>
+                </div>
+
+                <div class="tier-box">
+                    <h4>Tier 2: Comparative Analysis</h4>
+                    <p>Three hypothetical actors: (A) profit-motivated website owner, (B) foreign government seeking division, (C) true believer sharing "hidden truth."</p>
+                    <p>Questions: How do motivations differ? Content strategies? AI usefulness? Which is most dangerous? Do solutions differ?</p>
+                </div>
+
+                <div class="tier-box">
+                    <h4>Tier 3: Systemic Analysis</h4>
+                    <p>The channel explosion: from four networks to millions of sources.</p>
+                    <p>Questions: Benefits of millions of sources? Costs? How do we weigh old system's problems (gatekeeping, exclusion) against current problems? Platform incentives? Who should do what?</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Circulating During Discussion</h4>
+                    <p>Move among groups. Listen for insights worth surfacing in synthesis. Also listen for discussions that are getting too heated or veering into specific partisan accusations. Redirect as needed: "Let's keep this at the level of systems and incentives rather than specific people or organizations."</p>
+                </div>
+
+                <h3>The Cost Asymmetry Problem (6 minutes)</h3>
+                
+                <p>Display or reference the cost asymmetry table:</p>
+
+                <table>
+                    <tr>
+                        <th>Creating Misinformation</th>
+                        <th>Debunking Misinformation</th>
+                    </tr>
+                    <tr>
+                        <td>Seconds</td>
+                        <td>Hours or days</td>
+                    </tr>
+                    <tr>
+                        <td>Nearly free (especially with AI)</td>
+                        <td>Requires expertise and resources</td>
+                    </tr>
+                    <tr>
+                        <td>Can reach millions instantly</td>
+                        <td>Corrections rarely reach original audience</td>
+                    </tr>
+                    <tr>
+                        <td>Emotionally compelling</td>
+                        <td>Often dry and technical</td>
+                    </tr>
+                    <tr>
+                        <td>Simple narrative</td>
+                        <td>Complex explanation</td>
+                    </tr>
+                </table>
+
+                <div class="script-box">
+                    <div class="script-label">Cost Asymmetry Explanation</div>
+                    <p>"This is the core strategic problem. For every piece of misinformation you debunk, a hundred more can be created in the time it took you to write your correction. AI makes this worse—the cost of creating convincing misinformation drops to nearly zero. This is why individual detection skills, while valuable, are not sufficient. You cannot fact-check your way out of an infinite flood of content."</p>
+                </div>
+
+                <p>Connect to the AI framework:</p>
+                <ul>
+                    <li><strong>AI is good at:</strong> Fluent text, realistic images, professional audio, video of people saying things they never said, infinite scaling</li>
+                    <li><strong>AI is bad at:</strong> Truth, accuracy, verification, understanding what's actually true</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>The Perfect Misinformation Tool</h4>
+                    <p>"AI excels at exactly what makes misinformation <em>convincing</em>—fluent text, realistic media. And AI fails at exactly what would make it <em>accurate</em>—truth, verification. AI is the perfect misinformation tool not by design, but because its capabilities and limitations happen to align perfectly with what misinformation requires."</p>
+                </div>
+
+                <h3>Side Note: The Democratization Question (5 minutes, optional)</h3>
+                
+                <p>This section steps back to consider a broader question. You can treat it as optional or use it if time permits and it fits your class.</p>
+
+                <div class="script-box">
+                    <div class="script-label">Democratization Frame</div>
+                    <p>"Let's step back. What happens when anyone can produce professional-quality content? Think about music. If you're one in a million in talent, that sounds rare. But with 8.2 billion people, one in a million means 8,200 people as talented as you. Programs like 'The Voice' exploit this math—talent is abundant, not rare. What makes a superstar isn't just talent; it's talent plus drive plus business acumen plus luck. So when AI can produce competent content in any domain, what does human contribution actually add?"</p>
+                </div>
+
+                <p>Key points:</p>
+                <ul>
+                    <li>The gap between "professional quality" and "rare genius" was never as wide as we assumed</li>
+                    <li>What becomes valuable when production is cheap? Authentic connection, genuine community, real relationship</li>
+                    <li>Possible shift from superstars to local stars</li>
+                </ul>
+
+                <h3>Group Synthesis (6 minutes)</h3>
+                
+                <p>Bring the class back together. Have groups share key insights. Use the synthesis questions to guide discussion:</p>
+                <ol>
+                    <li>What patterns emerged across different types of misinformation actors?</li>
+                    <li>How has the "channel explosion" changed the information landscape?</li>
+                    <li>How does AI specifically make the problem worse?</li>
+                    <li>What are the implications of cost asymmetry?</li>
+                    <li>What can't be solved by individual detection skills?</li>
+                </ol>
+
+                <h3>Review Questions and Looking Ahead (2 minutes)</h3>
+                
+                <p>Students complete the three review questions. Preview the next lesson:</p>
+
+                <div class="script-box">
+                    <div class="script-label">Bridge to Next Lesson</div>
+                    <p>"Today you examined why misinformation exists—the incentives, the actors, the systems. You've seen that individual detection skills can't solve a structural problem. Tomorrow we'll turn to what you <em>can</em> do: practical tools and strategies for verification. Not perfect solutions—those don't exist—but approaches for navigating this mess."</p>
+                </div>
+            </section>
+
+            <!-- ANSWER KEY SECTION -->
+            <section id="answer-key" class="section">
+                <h2>Answer Key</h2>
+
+                <div class="answer-key">
+                    <h4>Review Questions — Quick Reference</h4>
+                    <table>
+                        <tr>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Key Concept</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>B</td>
+                            <td>Cost asymmetry: cheap to create, expensive to debunk</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>C</td>
+                            <td>Channel explosion enabled niche content and echo chambers</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>B</td>
+                            <td>AI is fluent with text and media, but not truth verification</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Review Question Explanations</h3>
+
+                <h4>Question 1</h4>
+                <p><strong>Correct Answer: B (Creating misinformation is cheap and fast; debunking it is expensive and slow)</strong></p>
+                <p>The cost asymmetry is the structural core of the misinformation problem—false content can be generated in seconds for nearly free, while corrections take hours, require expertise, and rarely reach everyone who saw the original.</p>
+                <p><strong>Why other answers are wrong:</strong></p>
+                <ul>
+                    <li>A) Reverses the dynamic; misinformation is cheap to create, not expensive</li>
+                    <li>C) No such platform pricing is discussed</li>
+                    <li>D) The asymmetry applies to all actors, not just foreign vs. domestic</li>
+                </ul>
+
+                <h4>Question 2</h4>
+                <p><strong>Correct Answer: C (Enabled niche content and echo chambers)</strong></p>
+                <p>The shift from four channels to millions of sources meant mass appeal was no longer required. Content could target niches, including echo chambers where people consume only content confirming their beliefs.</p>
+                <p><strong>Why other answers are wrong:</strong></p>
+                <ul>
+                    <li>A) The channel explosion increased fragmentation and enabled more bias, not less</li>
+                    <li>B) Mass appeal was the strategy for four channels; the explosion enabled niche strategies</li>
+                    <li>D) The explosion dramatically increased content; it didn't reduce it</li>
+                </ul>
+
+                <h4>Question 3</h4>
+                <p><strong>Correct Answer: B (Is fluent with text and media, but not truth verification)</strong></p>
+                <p>AI excels at exactly what makes misinformation convincing (fluent text, realistic media) and fails at what would make it accurate (truth verification). This alignment makes AI ideal for producing misinformation.</p>
+                <p><strong>Why other answers are wrong:</strong></p>
+                <ul>
+                    <li>A) AI wasn't designed for misinformation; its capabilities just happen to serve it well</li>
+                    <li>C) AI cannot detect misinformation better than humans; it lacks truth verification</li>
+                    <li>D) AI content isn't illegal; this answer doesn't address the actual argument</li>
+                </ul>
+
+                <h3>Discussion Tier Assessment</h3>
+                <p>For discussion days, formal assessment of discussion quality is optional. If desired, evaluate based on:</p>
+                <ul>
+                    <li><strong>Engagement:</strong> Did students participate actively in small group and whole-class discussion?</li>
+                    <li><strong>Application:</strong> Did students connect lesson concepts (cost asymmetry, channel explosion, AI capabilities) to their analysis?</li>
+                    <li><strong>Nuance:</strong> Did students recognize complexity (multiple actor types, tradeoffs in any solution)?</li>
+                    <li><strong>Synthesis:</strong> Did students connect this lesson to earlier Chapter 7 content?</li>
+                </ul>
+            </section>
+
+            <!-- CHALLENGES SECTION -->
+            <section id="challenges" class="section">
+                <h2>Potential Challenges</h2>
+
+                <h3>Challenge: Discussion becomes politically partisan</h3>
+                <p><strong>Response:</strong> Redirect to systems and incentives rather than specific people or organizations. "Let's step back from specific examples and think about the structure. What incentives exist regardless of which party or outlet we're discussing? The channel explosion and algorithmic amplification affect content across the political spectrum." If necessary, invoke the lesson's focus: "We're trying to understand why the system produces misinformation, not to debate which specific content is true or false."</p>
+
+                <h3>Challenge: Students claim "my side doesn't spread misinformation"</h3>
+                <p><strong>Response:</strong> "The lesson describes different actor types—profit-motivated, state-sponsored, ideologically-driven. Each type exists across political perspectives. True believers on all sides share content they genuinely think is important. The question isn't whether any particular group is immune; it's how the system incentivizes certain behaviors regardless of ideology."</p>
+
+                <h3>Challenge: Students feel hopeless about the problem</h3>
+                <p><strong>Response:</strong> Acknowledge the challenge honestly, but point forward. "You're right that individual detection can't solve a structural problem. That's an important insight—it means we need systemic responses, not just personal vigilance. Next lesson we'll look at practical tools and strategies. They're not perfect solutions, but they're better than nothing. And understanding how the system works—which you now do—is the first step toward any solution."</p>
+
+                <h3>Challenge: Students want to discuss specific current events</h3>
+                <p><strong>Response:</strong> Use judgment based on your community and the specific example. If the example illustrates lesson concepts without becoming partisan debate, you can engage briefly. If it risks derailing into political argument, redirect: "That's an interesting example. Let's think about it through the framework: Who created that content? What was their motivation? How was it amplified? That analysis works regardless of which specific story we're discussing."</p>
+
+                <h3>Challenge: Students are skeptical about "mainstream media" being better</h3>
+                <p><strong>Response:</strong> The lesson doesn't claim the four-channel era was better—it explicitly notes that system had problems too (gatekeeping, exclusion, its own biases). "You're right that the old system wasn't perfect. The lesson isn't saying we should go back to four channels. It's saying we should understand what changed and what tradeoffs came with those changes. More sources means more voices—that's good. It also means echo chambers and algorithmic amplification—that's challenging. Both are true."</p>
+
+                <h3>Challenge: Students fixate on the democratization section</h3>
+                <p><strong>Response:</strong> The "Side Note" framing signals this is interesting but tangential. If students are engaged, that's fine—the local star concept and talent math are genuinely thought-provoking. But if it's consuming too much time, redirect: "This is fascinating territory we could discuss all day. But the core lesson is about misinformation specifically—let's make sure we've addressed that before we run out of time."</p>
+
+                <h3>Challenge: Time runs short</h3>
+                <p><strong>Response:</strong> Priorities in order: (1) Opening brainstorm establishes actor typology, (2) Channel explosion provides historical context, (3) Tiered discussion is the core activity, (4) Cost asymmetry is the key concept. If time is short, condense Section I (democratization) or treat it as optional reading. Don't skip the cost asymmetry—it's the lesson's central insight.</p>
+            </section>
+
+            <!-- LOOKING AHEAD SECTION -->
+            <section id="looking-ahead" class="section">
+                <h2>Looking Ahead</h2>
+
+                <h3>Connection to Lesson 7.6</h3>
+                <p>Lesson 7.6 turns from understanding the problem to practical tools: verification strategies, lateral reading, source evaluation, reverse image search, and other techniques. The framing from today matters: these tools are valuable but can't solve a structural problem. Students should approach 7.6 with realistic expectations—useful skills, not magic solutions.</p>
+
+                <div class="script-box">
+                    <div class="script-label">Bridge to Next Lesson</div>
+                    <p>"Today you learned why misinformation exists and why the problem is structural. Tomorrow you'll learn what you can actually do about it—practical tools for verification. Not perfect solutions, but better than nothing. And now you understand why 'just fact-check everything' isn't a sufficient answer."</p>
+                </div>
+
+                <h3>Key Takeaways to Reinforce</h3>
+                <ol>
+                    <li><strong>Misinformation has multiple causes:</strong> Money, political influence, ideology, chaos—different actors, different goals</li>
+                    <li><strong>The channel explosion enabled echo chambers:</strong> From mass appeal to niche targeting</li>
+                    <li><strong>Algorithms amplify engagement, not truth:</strong> Correlation processing doing what it's designed to do</li>
+                    <li><strong>Cost asymmetry is the core problem:</strong> Cheap to create, expensive to debunk</li>
+                    <li><strong>AI is the perfect misinformation tool:</strong> Capabilities serve misinformation; limitations can't prevent it</li>
+                    <li><strong>Individual detection skills are necessary but insufficient:</strong> The problem is structural</li>
+                </ol>
+
+                <h3>Chapter 7 Roadmap</h3>
+                <table>
+                    <tr>
+                        <th>Lesson</th>
+                        <th>Focus</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>7.1</td>
+                        <td>AI in Media—framework for capabilities and limitations</td>
+                        <td>Lesson Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.2</td>
+                        <td>The Lyrics Lab—detecting AI through "what is this about?" test</td>
+                        <td>Lab Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.3</td>
+                        <td>AI Writing vs. Human Writing—prose analysis and editing</td>
+                        <td>Lab Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.4</td>
+                        <td>Authentic Voice—AI as mirror, transformation activity</td>
+                        <td>Project Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>Misinformation in the AI Age—ecosystem and incentives</td>
+                        <td>Discussion Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.6</td>
+                        <td>Tools for Truth Verification—practical strategies</td>
+                        <td>Lab Day</td>
+                    </tr>
+                    <tr>
+                        <td>7.7</td>
+                        <td>Democracy and Information Quality</td>
+                        <td>Discussion Day</td>
+                    </tr>
+                </table>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>
